@@ -13,7 +13,7 @@
 我希望我能够成为我所想要成为的那个人，一面技术，一面生活！ 梦想总是要有的，万一实现了呢？ :smile:   
 
 
-http://allenleic.github.io。
+http://allenleic.github.io
 
 ### 使用条件
 
