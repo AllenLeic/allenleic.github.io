@@ -76,8 +76,6 @@ $location.url()
 
 <br/>
 
-**原创声明**
-
-<br/>
+**原创声明**  
 
 转载请注明: [雷聪的博客](https://allenleic.github.io) » [{{ page.title }}](https://allenleic.github.io/2017/07/{{ page.title }})
