@@ -26,7 +26,7 @@ app.config(['$locationProvider',function($locationProvider) {
 对上面两个参数进行说明：  
 
 - `enabled: true` ：设置为html5Mode(模式)，当为false时为Hashbang模式 
-- `requireBase : true` ：是否需要加入base标签，这里设置为false，设置为true时，需在html的head配置`<base href="" />`标签。在这个标签里面写你的项目路径，比如我使用maven 构建的使用 Tomcat 插件的项目路径是：
+- `requireBase : true` ：是否需要加入base标签，设置为true时，需在html的head配置`<base href="" />`标签。在这个标签里面写你的项目路径，比如我使用maven 构建的使用 Tomcat 插件的项目路径是：
 
 ```xml
 <!-- 配置tomcat插件 -->
@@ -42,7 +42,22 @@ app.config(['$locationProvider',function($locationProvider) {
 
 那么我的`<base href="/" />` 这么配就可以正确的解析了。
 
-### **二、基本用法**
+#### 下面给出简化版本的配置，一般情况下使用简化版本就够了
+
+在页面配置位置提供者和base标签：
+
+```javascript
+<script type="text/javascript">
+/** 配置位置提供者 */
+app.config(function($locationProvider) {
+    $locationProvider.html5Mode(true);
+});
+</script>
+```
+
+**简化版默认需要引入base 标签，否则会解析错误。**
+
+### 二、基本用法
 
 我用这段段 URL 作为测试 `http://127.0.0.1:9102/pages/test.html?name=allenlei` ，配置和上面的是一样的。结果如下，注释部分为结果。  
 
