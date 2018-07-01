@@ -2,7 +2,7 @@
 layout: post
 title: "为什么要学习 Spring Boot？"
 date: 2018-06-28
-tags: spring boot
+tags: spring-boot
 ---
 
 ## 前言
