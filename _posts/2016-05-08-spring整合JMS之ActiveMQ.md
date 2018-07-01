@@ -75,11 +75,11 @@ StreamMessage -- 数据流封装消息
 
 对于消息的传递有两种类型：
 
-一种是点对点的，即一个生产者和一个消费者一一对应：  ![img](/images/posts/spring-jms/clip_image002-1530431583747.gif)  
+一种是点对点的，即一个生产者和一个消费者一一对应：  ![img](/images/post/activemq/clip_image002-1530431583747.gif)  
 
 另一种是发布/ 订阅模式，即一个生产者产生消息并进行发送后，可以由多个消费者进行接收：  
 
-![img](/images/posts/spring-jms/clip_image002-1530431621911.gif)  
+![img](/images/post/activemq/clip_image002-1530431621911.gif)  
 
 ## ActiveMQ下载与安装
 
@@ -91,19 +91,19 @@ Linux 上面的安装是直接解压，然后进入到 bin 里面的目录使用
 
 打开之后的话会弹出如下界面：  
 
-![1530433149782](/images/posts/spring-jms/1530433149782.png)  
+![1530433149782](/images/post/activemq/1530433149782.png)  
 
 点击图中所示位置， Manage ActiveMQ broker 这时候会让你输入用户名和密码。这里默认的账号和密码都是 admin。后期也可以根据自己的需要修改，修改的地方在`conf/users.properties` 这个文件，默认下面是一个 `admin=admin` 所以这就是登录的用户名和密码了。
 
 最后还有一点需要强调的是，不要放到有中文路径的地方，不然会无法启动的。登陆后的页面如下：  
 
-![1530433230465](/images/posts/spring-jms/1530433230465.png)
+![1530433230465](/images/post/activemq/1530433230465.png)
 
 上面显示的是 ActiveMQ 的管理界面，可以点击图中的 Queue 来查看和管理消息。
 
 点击上方菜单栏的 Queues 可以调整到消息队列的查看和管理界面：  
 
-![1530433411680](/images/posts/spring-jms/1530433411680.png)  
+![1530433411680](/images/post/activemq/1530433411680.png)  
 
 **Number Of Pending Messages****：等待消费的消息 这个是当前未出队列的数量。
 
@@ -183,13 +183,13 @@ public class ProducerTest {
 
 点击运行后控制台输出如下代码：  
 
-![1530434454198](/images/posts/spring-jms/1530434454198.png)  
+![1530434454198](/images/post/activemq/1530434454198.png)  
 
 上面的几行警告不需要管，那是日志框架缺少实现导致的这里不需要用到。
 
 查看ActiveMQ 的管理界面会发现多了一行数据  
 
-![1530435034523](/images/posts/spring-jms/1530435034523.png)    
+![1530435034523](/images/post/activemq/1530435034523.png)    
 
 这就是我们刚刚放进去的数据了。  
 
@@ -256,11 +256,11 @@ public class ConsumerTest {
 
 控制台输出：  
 
-![1530435280608](/images/posts/spring-jms/1530435280608.png)  
+![1530435280608](/images/post/activemq/1530435280608.png)  
 
 管理界面：  
 
-![1530435367372](/images/posts/spring-jms/1530435367372.png)  
+![1530435367372](/images/post/activemq/1530435367372.png)  
 
 这里从 1  变成了 0，而且刚刚的消息我们在控制台输出了，这里就代表消息消费成功。
 
@@ -427,7 +427,7 @@ public class QueueMessageListener implements
 
 准备好以上代码后，直接运行main 方法。控制台出现如下代码：  
 
-![1530437346714](/images/posts/spring-jms/1530437346714.png)  
+![1530437346714](/images/post/activemq/1530437346714.png)  
 
 这里由于消息的监听器交给 spring 管理了。那么只要 spring 容器启动，则默认会启动监听器来监听消息。所以直接消费了消息队列。
 
@@ -541,7 +541,7 @@ public class QueueMessageListener implements
 
 这里使用 `int i = 1/0;` 简单的模拟异常后，死信队列出现时的ActiveMQ 管理界面图：  
 
-![1530443844424](/images/posts/spring-jms/1530443844424.png)  
+![1530443844424](/images/post/activemq/1530443844424.png)  
 
 这就是 ActiveMQ 的死信队列了。
 
