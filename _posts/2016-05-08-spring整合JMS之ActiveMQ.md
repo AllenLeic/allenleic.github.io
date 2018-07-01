@@ -3,7 +3,7 @@ layout: post
 title: "spring整合JMS之ActiveMQ"
 date: 2016-05-08
 description: "讲解spring整合JMS与ActiveMQ的是基本使用"
-tags: spring
+tags: spring MQ
 ---
 
 ## 前言
@@ -33,7 +33,7 @@ ORM 是一种思想，JPA 是一种规范、而Hibernate 是对 JPA 的具体实
 
 ## JMS 简介
 
-#### 什么是 JMS？
+### 什么是 JMS？
 
 JMS（[**Java** ](http://lib.csdn.net/base/java)MessagingService）是Java平台上有关面向消息中间件的技术规范，它便于消息系统中的Java应用程序进行消息交换,并且通过提供标准的产生、发送、接收消息的接口简化企业应用的开发。
 
@@ -57,7 +57,7 @@ AMQP协议的领导实现，支持多种场景。淘宝的MySQL集群内部有�
 
 Apache下的一个子项目 。特点：高吞吐，在一台普通的服务器上既可以达到16W/s的吞吐量；完全的分布式系统。适合处理海量数据。  
 
-#### JMS 消息正文格式
+### JMS 消息正文格式
 
 JMS 定义了五种不同的消息正文格式，以及调用的消息类型，允许你发送并接收以一些不同形式的数据，提供现有消息格式的一些级别的兼容性。
 
@@ -71,7 +71,7 @@ BytesMessage -- 字节封装消息
 
 StreamMessage -- 数据流封装消息
 
-#### JMS消息传递类型
+### JMS消息传递类型
 
 对于消息的传递有两种类型：
 
@@ -105,13 +105,13 @@ Linux 上面的安装是直接解压，然后进入到 bin 里面的目录使用
 
 ![1530433411680](/images/posts/activemq/1530433411680.png)  
 
-**Number Of Pending Messages****：等待消费的消息 这个是当前未出队列的数量。
+**Number Of Pending Messages**：等待消费的消息 这个是当前未出队列的数量。
 
-**Number Of Consumers****：消费者 这个是消费者端的消费者数量
+**Number Of Consumers**：消费者 这个是消费者端的消费者数量
 
-**Messages Enqueued****：进入队列的消息  进入队列的总数量,包括出队列的。
+**Messages Enqueued**：进入队列的消息  进入队列的总数量,包括出队列的。
 
-**Messages Dequeued****：出了队列的消息  可以理解为消费掉的消息总数量。
+**Messages Dequeued**：出了队列的消息  可以理解为消费掉的消息总数量。
 
 ## ActiveMQ 的简单上手（队列模式）
 
