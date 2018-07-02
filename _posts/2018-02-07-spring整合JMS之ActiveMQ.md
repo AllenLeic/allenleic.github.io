@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "spring整合JMS之ActiveMQ"
-date: 2016-05-08
+date: 2018-02-08
 description: "讲解spring整合JMS与ActiveMQ的是基本使用"
 tags: spring MQ
 ---
